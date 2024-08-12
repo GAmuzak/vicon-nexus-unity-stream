@@ -363,7 +363,7 @@ namespace ubco.ovilab.ViconUnityStream
                 if (!SubjectHidden)
                 {
                     transform.position = segments[rootSegment] * viconUnitsToUnityUnits;
-                    transform.rotation = segmentsRotation[rootSegment];
+                    //transform.rotation = segmentsRotation[rootSegment];
                     FindAndTransform(transform, rootSegment);
 
                 }
