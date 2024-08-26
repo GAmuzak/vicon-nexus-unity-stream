@@ -86,13 +86,14 @@ namespace ubco.ovilab.ViconUnityStream
                 rotation = rotFilter.Filter(rotation, Time.realtimeSinceStartup);
             }
 
-            rotation = rotation * hmdRotationOffset;
+            //rotation = rotation * hmdRotationOffset;
 
             Vector3 scaledHMWDPositionOffset = hmdPositionOffset / viconUnitsToUnityUnits;
 
-            base1Pos += (forward.normalized * scaledHMWDPositionOffset.z + up.normalized * scaledHMWDPositionOffset.y + right.normalized * scaledHMWDPositionOffset.x) * viconUnitsToUnityUnits;
+            base1Pos += (forward.normalized * scaledHMWDPositionOffset.z + up.normalized * scaledHMWDPositionOffset.y + right.normalized * scaledHMWDPositionOffset.x);
+            //base1Pos = base1Pos * viconUnitsToUnityUnits;
 
-            ViconXRLoader.TrySetXRDeviceData(base1Pos, rotation);
+            ViconXRLoader.TrySetXRDeviceData(base1Pos * viconUnitsToUnityUnits, rotation);
 
             foreach (var key in segmentsRotation.Keys.ToArray())
             {
