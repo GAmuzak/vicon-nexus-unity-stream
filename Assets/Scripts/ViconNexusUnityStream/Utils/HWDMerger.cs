@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -71,6 +72,11 @@ namespace ubco.ovilab.ViconUnityStream.Utils
         /// Called when the differences is above the respective thresholds.
         /// </summary>
         public UnityEvent OnDifferenceAboveThreshold => onDifferenceAboveThreshold;
+
+        private void Awake()
+        {
+            Invoke(nameof(MergeHWDs), 5f);
+        }
 
         /// <summary>
         /// Move the XR origin such that the Vicon HWD and XR HWD transforms are within specified thresholds.
