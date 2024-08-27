@@ -88,7 +88,7 @@ namespace ubco.ovilab.ViconUnityStream
 
             //rotation = rotation * hmdRotationOffset;
 
-            Vector3 scaledHMWDPositionOffset = hmdPositionOffset / viconUnitsToUnityUnits;
+            Vector3 scaledHMWDPositionOffset = hmdPositionOffset;// / viconUnitsToUnityUnits;
 
             base1Pos += (forward.normalized * scaledHMWDPositionOffset.z + up.normalized * scaledHMWDPositionOffset.y + right.normalized * scaledHMWDPositionOffset.x);
             //base1Pos = base1Pos * viconUnitsToUnityUnits;
