@@ -73,7 +73,7 @@ namespace ubco.ovilab.ViconUnityStream.Utils
         /// </summary>
         public UnityEvent OnDifferenceAboveThreshold => onDifferenceAboveThreshold;
 
-        private void Awake()
+        private void Start()
         {
             Invoke(nameof(MergeHWDs), 5f);
         }
